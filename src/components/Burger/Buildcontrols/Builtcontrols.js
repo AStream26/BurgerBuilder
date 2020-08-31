@@ -11,7 +11,7 @@ var state =[
 const Burgerbuilders = (props)=>(
 	
 	<div className={classes.Builtcontrols}>
-	<p> <strong>Price</strong> : {props.price} </p>
+	<p> <strong>Price</strong> : {props.price.toFixed(2)} </p>
      {      
 
      	state.map(ctrl=>(
@@ -19,9 +19,12 @@ const Burgerbuilders = (props)=>(
      		  label={ctrl.label}
      		 added={() => props.addIngredients(ctrl.type)}
      		 removed = {()=>props.removeIngredients(ctrl.type)}
-     		 disable ={props.disable[ctrl.type]} />
+     		 disable ={props.disable[ctrl.type]}
+     		  />
      		))
      }
+
+     <button disabled = {!props.purchaseable} onClick={props.order}> ORDER</button>
 
 
 	</div>

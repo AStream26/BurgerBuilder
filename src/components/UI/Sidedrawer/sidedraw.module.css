@@ -1,0 +1,28 @@
+.sidedraw{
+	position: fixed;
+	width: 280px;
+	max-width: 70%;
+	padding: 32px 16px;
+	box-sizing: border-box;
+	height: 100%;
+	left:0;
+	top:0;
+	z-index: 200;
+	background-color: red;
+	transition: transform 0.3s ease-in;
+
+}
+
+@media(min-width: 500px){
+	.sidedraw{
+		display: none;
+	}
+}
+
+.open{
+	transform:translateX(0);
+}
+
+.close{
+	transform:translateX(-100%);
+}
