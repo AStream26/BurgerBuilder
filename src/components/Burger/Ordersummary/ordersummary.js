@@ -5,7 +5,7 @@ import classes from './ordersummary.module.css';
 
 const ordersummary = (props)=>{
 
-	const summery = Object.keys(props.ingredint).map((igkey)=>{
+	let summery = Object.keys(props.ingredint).map((igkey)=>{
 		return <li key={igkey}> {igkey}:{props.ingredint[igkey]}    </li>
 	});
       

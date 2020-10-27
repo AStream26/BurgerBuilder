@@ -3,14 +3,15 @@ import classes from './Burger.module.css';
 
 import Burgeringredint from './BurgerIng/BurgerIng';
 const burger  = (props)=>{
+	//console.lof(props.ing);
 
-	const ingre = Object.keys(props.ing).map((igkey)=>{
+	let ingre = Object.keys(props.ing).map((igkey)=>{
 		return [...Array(props.ing[igkey])].map((_,i)=>{
 		return <Burgeringredint key ={igkey+i} type = {igkey} />
-	});
+	})
 
 	}).reduce((arr,cur)=>{
-       return arr.concat(cur);
+       return arr.concat(cur)
 	},[]);
 //	console.log(ingre);
 

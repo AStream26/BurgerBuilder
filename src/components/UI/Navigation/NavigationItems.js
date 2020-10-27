@@ -7,8 +7,8 @@ const navigation = (props)=>{
        
        <ul className={classes.items}>
 
-       <Item active link="/">Burger Builder </Item>
-       <Item link="/"> Checkout </Item>
+       <Item link="/">Burger Builder </Item>
+       <Item link="/Orders"> Checkout </Item>
         
 
        </ul>
