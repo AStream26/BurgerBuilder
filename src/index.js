@@ -3,14 +3,22 @@ import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import './index.css';
 import {Provider} from 'react-redux';
-import {createStore} from 'redux';
+import {createStore,applyMiddleware,combineReducers} from 'redux';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-import Reducer from './store/reducer';
+import Reducer from './store/Reducer/burgerbuilder';
+import Order from   './store/Reducer/order';
+import thunk from 'redux-thunk';
 
-const store = createStore(Reducer);
+const rootReducer  = combineReducers({
+     burgerBuilder:Reducer,
+     order:Order
+
+});
+
+const store = createStore(rootReducer,applyMiddleware(thunk));
 
 
 

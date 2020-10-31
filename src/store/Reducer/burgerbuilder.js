@@ -1,5 +1,5 @@
 //const redux = require('redux');
-import * as Actiontype from './action.js';
+import * as Actiontype from '../Action/ActionType.js';
 
 let ING_Price = {
 	Salad:20,
@@ -7,15 +7,18 @@ let ING_Price = {
 	Cheese:34.5,
 	Bacon:37.7
 };
+
+// {
+// 			Salad:0,
+// 			Meat:0,
+// 	Cheese:0,
+// 	Bacon:0
+// 		}
 const intialstate ={
 	
-	ingredient:{
-			Salad:0,
-			Meat:0,
-	Cheese:0,
-	Bacon:0
-		},
-	totalprice:74
+	ingredient: null,
+	totalprice:4,
+	error:false
 }
 
 const reducer = (state=intialstate,action)=>{
@@ -43,6 +46,21 @@ const reducer = (state=intialstate,action)=>{
 
 		  }
 		  break;
+		  case(Actiontype.SET_INGREDIENT):
+		  return{
+		  	...state,
+		  	ingredient:action.ingredient,
+		  	totalprice:4,
+		  	error:false
+		  }
+		   break;
+
+		   case(Actiontype.SET_ERROR_FETCH):
+		   return{
+		   	...state,
+		   	error:true
+		   }
+		   break;
 		  default:return state;
 	}
 

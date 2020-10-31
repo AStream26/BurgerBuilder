@@ -20,7 +20,7 @@ class orders extends Component{
               id:key
        		});
        	}
-       	//console.log(res.data);
+       	console.log(res.data);
        	this.setState({order:fetched,loading:false});
        }
      	).catch(

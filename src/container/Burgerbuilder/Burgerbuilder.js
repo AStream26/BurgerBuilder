@@ -8,7 +8,7 @@ import Axios from '../../Axiosinstance.js';
 import Load from '../../components/UI/Loader/loader.js';
 import Error from '../../hoc/Errorhandler/Errorhandler';
 import {connect} from 'react-redux';
-import * as Actiontype from '../../store/action';
+import * as Actioncreateor from '../../store/Action/index';
 
 
 
@@ -16,8 +16,7 @@ class Burgerbuilder extends Component {
 	state = {
 		//purchaseable:false,
 		purchasing :false,
-		loading:false,
-		error:false
+		
 	}
 
 	componentDidMount(){
@@ -27,6 +26,8 @@ class Burgerbuilder extends Component {
 		// }).catch(err=>{
   //        this.setState({error:true})
 		// });
+
+		this.props.intialIngredient();
 	}
 
      purchase = ()=>{
@@ -41,7 +42,7 @@ class Burgerbuilder extends Component {
 	}
 
 	confirmorder=()=>{
-		
+		this.props.onPurchaseinit();
 		this.props.history.push('/checkout');
 	}
 
@@ -70,36 +71,59 @@ class Burgerbuilder extends Component {
 		}
 
 		let load = null;
+		if(this.props.ings!=null){
 			load = 
 			 <Summery price={this.props.price} 
 			 confirm={this.confirmorder} 
 			 cancel={this.cancelpurchase} 
 			 ingredint={this.props.ings} />
+		}
 
-       // let Burger = this.state.error?<p>Application Failed</p>:<Load />;
+        let burger = this.props.error?<p>Application Failed</p>:<Load />;
          
 
-            	if(this.state.loading){
-			         load = <Load />
-		     }
+       //      	if(this.state.loading){
+			    //      load = <Load />
+		     // }
 	      
-
-		return (
-			<Aux>
-			 <Modal purchase ={this.state.purchasing} click={this.cancelpurchase}>
-			 {
-			 	load
-			 }
-			 </Modal>
-			 
-			<Burger ing = {this.props.ings} />
+	      if(this.props.ings){
+             burger = (
+         
+			
+		     <Aux>
+		     <Burger ing = {this.props.ings} />
             
 			<Builtcontrols addIngredients = {this.props.addIngredient}
 			 removeIngredients={this.props.removeIngredient} disable={disabledcheck}
 			 price = {this.props.price}
 			 purchaseable={this.checkorder()}
 			 order = {this.purchase}  />
-			</Aux>
+
+		     </Aux>	 
+			
+		    
+
+
+             	)
+	      }
+
+
+
+
+		return (
+
+		      <Aux>
+		       <Modal purchase ={this.state.purchasing} click={this.cancelpurchase}>
+			 {
+			 	load
+			 }
+			 </Modal>
+			 {
+			 	burger
+			 }
+
+		      </Aux>
+			
 			);
 	}
 }
@@ -107,15 +131,18 @@ class Burgerbuilder extends Component {
 
 const mapStateToProps = state =>{
 	return {
-		ings:state.ingredient,
-		price:state.totalprice
+		ings:state.burgerBuilder.ingredient,
+		price:state.burgerBuilder.totalprice,
+		error:state.burgerBuilder.error
 	}
 }
 
 const mapDispatchToProps = dispatch =>{
 	return {
-		addIngredient:(ing) => dispatch({type:Actiontype.ADD_INGREDIENT,INGNAME:ing}),
-		removeIngredient:(ing) => dispatch({type:Actiontype.REMOVE_INGREDIENT,INGNAME:ing})
+		addIngredient:(ing) => dispatch(Actioncreateor.addIngredient(ing)),
+		removeIngredient:(ing) => dispatch(Actioncreateor.removeIngredient(ing)),
+		intialIngredient:() => dispatch(Actioncreateor.setIngredient()),
+		onPurchaseinit:()=>dispatch(Actioncreateor.purchaseInit())
 	}
 }
 
