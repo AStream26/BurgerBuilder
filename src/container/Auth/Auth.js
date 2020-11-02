@@ -73,7 +73,7 @@ import Loader from '../../components/UI/Loader/authload.js';
 		
 		let isvalid = true;
 		if(rule.required){
-			isvalid = value.trim()!='';
+			isvalid = value.trim()!=='';
 
 		}
 
@@ -100,7 +100,7 @@ inputchange = (event,key)=>{
 		for(let key in formalordervalue){
 			  validity   = formalordervalue[key].valid&&validity;
 		}
-        console.log(validity);
+       // console.log(validity);
 		this.setState({controls:formalordervalue,validation:validity});
 
 
@@ -184,7 +184,7 @@ inputchange = (event,key)=>{
  	return{
  		loading:state.auth.loading,
  		error:state.auth.error,
- 		isauth:state.auth.token!=null,
+ 		isauth:state.auth.token!==null,
  		building:state.burgerBuilder.building,
  		authredirect:state.auth.authredirect
  	}

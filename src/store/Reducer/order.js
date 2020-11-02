@@ -32,28 +32,28 @@ const reducer = (state=intialstate,action) => {
        	     purchased:true,
        	     order:state.order.concat(cur_order)
        }
-       break;
+       
 
        case(ActionType.PURCHASE_BURGER_FAIL):
        return{
        	...state,
        	loading:false
        }
-       break;
+       
 
        case(ActionType.FETCH_FAIL):
        return {
         ...state,
         loading:false
        }
-       break;
+      
        case(ActionType.FETCH_START):
        // console.log("FETCH_START");
        return{
         ...state,
         loading:true
        }
-       break;
+      
        case(ActionType.FETCH_END):
        //console.log("FETCH_END");
        return{

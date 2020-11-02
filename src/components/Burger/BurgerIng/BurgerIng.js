@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './BurgerIng.module.css';
-import  PropTypes from 'prop-types';
+
 
 const ingredint = (props)=>{
 	let ing = null;

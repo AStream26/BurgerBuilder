@@ -107,7 +107,7 @@ class Contact extends Component {
 		
 		let isvalid = true;
 		if(rule.required){
-			isvalid = value.trim()!='';
+			isvalid = value.trim()!=='';
 
 		}
 		return isvalid;
@@ -162,7 +162,7 @@ class Contact extends Component {
 		for(let key in formalordervalue){
 			  validity   = formalordervalue[key].valid&&validity;
 		}
-        console.log(validity);
+        //console.log(validity);
 		this.setState({orderdetail:formalordervalue,validation:validity});
 
 

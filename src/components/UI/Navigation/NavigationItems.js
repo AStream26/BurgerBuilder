@@ -3,7 +3,7 @@ import Item from './NavigationItem/Navigationitem.js';
 import classes from './items.module.css';
 
 const navigation = (props)=>{
-	console.log("props.isauth",props.isauth);
+	//console.log("props.isauth",props.isauth);
 	return (
        
        <ul className={classes.items}>

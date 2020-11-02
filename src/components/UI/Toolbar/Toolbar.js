@@ -12,7 +12,7 @@ const toolbar= (props)=>(
 		<header className={classes.toolbar}>
         
 		<Logo height="80%" />
-		 <div className={classes.mobileonly} onClick={props.click}><img src={Openmenu} className={classes.imga} /></div>
+		 <div className={classes.mobileonly} onClick={props.click}><img src={Openmenu} alt="&&"className={classes.imga} /></div>
 	
 		<nav className={classes.dekstoponly}>
 		<Nav isauth={props.isauth} />

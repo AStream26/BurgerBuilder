@@ -1,5 +1,5 @@
 import React from 'react';
-import classes from './loader.module.css';
+
 import 'bootstrap/dist/css/bootstrap.css';
 
 const loader =()=>{

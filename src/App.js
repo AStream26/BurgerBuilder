@@ -22,7 +22,7 @@ let  route = (
   <Switch>
   <Route path="/" exact component = {Burger} />
    <Route path="/authanticate" component = {Auth} />
-   <redirect to="/" />
+   <Redirect to="/" />
 
   </Switch>
 
@@ -34,10 +34,10 @@ let  route = (
      
     <Route path="/checkout" component = {Checkout} />
        <Route path="/orders" component = {Orders} />
-      
+       <Route path="/authanticate" component = {Auth} />
         <Route path="/logout" component = {Logout} />
          <Route path="/" exact component = {Burger} />
-         <redirect to="/" />
+         <Redirect to="/" />
 
   </Switch>
 

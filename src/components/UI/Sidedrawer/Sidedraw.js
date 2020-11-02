@@ -8,16 +8,16 @@ import Backdrop from '../Backdrop/Backdrop';
 
 
 const side = (props)=>{
-    console.log("Slide",props.isauth);
+    //console.log("Slide",props.isauth);
  let closeoropen = [classes.sidedraw,classes.close];
   if(props.show){
     closeoropen = [classes.sidedraw,classes.open];
   }
 	return (
      <Aux>
-      <Backdrop  show={!props.show} clicked={props.click}/>
+      <Backdrop  show={props.show} clicked={props.click}/>
 
-         <div className={closeoropen.join(' ')}>
+         <div className={closeoropen.join(' ')} onClick ={props.click}>
           <Logo height="10%" />
 
          <nav >

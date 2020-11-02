@@ -36,7 +36,7 @@ const reducer = (state=intialstate,action)=>{
 		   	building:true
 
 		   }
-		   break;
+		   
 		  case(Actiontype.REMOVE_INGREDIENT):
 		 // console.log("Removed!!!");
 		  return{
@@ -49,7 +49,7 @@ const reducer = (state=intialstate,action)=>{
 		   	building:true
 
 		  }
-		  break;
+		
 		  case(Actiontype.SET_INGREDIENT):
 		  return{
 		  	...state,
@@ -58,14 +58,14 @@ const reducer = (state=intialstate,action)=>{
 		  	error:false,
 		  	building:false
 		  }
-		   break;
+		   
 
 		   case(Actiontype.SET_ERROR_FETCH):
 		   return{
 		   	...state,
 		   	error:true
 		   }
-		   break;
+		   
 		  default:return state;
 	}
 
