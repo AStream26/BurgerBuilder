@@ -24,7 +24,7 @@ const Burgerbuilders = (props)=>(
      		))
      }
 
-     <button disabled = {!props.purchaseable} onClick={props.order}> ORDER</button>
+     <button disabled = {!props.purchaseable} onClick={props.order}>{props.isauth?'OREDR':'SINGUP TO ORDER'}</button>
 
 
 	</div>

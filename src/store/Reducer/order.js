@@ -41,6 +41,26 @@ const reducer = (state=intialstate,action) => {
        }
        break;
 
+       case(ActionType.FETCH_FAIL):
+       return {
+        ...state,
+        loading:false
+       }
+       break;
+       case(ActionType.FETCH_START):
+       // console.log("FETCH_START");
+       return{
+        ...state,
+        loading:true
+       }
+       break;
+       case(ActionType.FETCH_END):
+       //console.log("FETCH_END");
+       return{
+        ...state,
+        order:action.order,
+        loading:false
+       }
        default:
        return state;
    }

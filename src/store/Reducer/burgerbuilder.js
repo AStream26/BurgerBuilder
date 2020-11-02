@@ -18,7 +18,8 @@ const intialstate ={
 	
 	ingredient: null,
 	totalprice:4,
-	error:false
+	error:false,
+	building:false
 }
 
 const reducer = (state=intialstate,action)=>{
@@ -31,18 +32,21 @@ const reducer = (state=intialstate,action)=>{
 		   		...state.ingredient,
 		   		[action.INGNAME]:state.ingredient[action.INGNAME]+1
 		   	},
-		   	totalprice:state.totalprice+ING_Price[action.INGNAME]
+		   	totalprice:state.totalprice+ING_Price[action.INGNAME],
+		   	building:true
 
 		   }
 		   break;
 		  case(Actiontype.REMOVE_INGREDIENT):
+		 // console.log("Removed!!!");
 		  return{
 		  		...state,
 		   	ingredient:{
 		   		...state.ingredient,
 		   		[action.INGNAME]:state.ingredient[action.INGNAME]-1
 		   	},
-		   	totalprice:state.totalprice-ING_Price[action.INGNAME]
+		   	totalprice:state.totalprice-ING_Price[action.INGNAME],
+		   	building:true
 
 		  }
 		  break;
@@ -51,7 +55,8 @@ const reducer = (state=intialstate,action)=>{
 		  	...state,
 		  	ingredient:action.ingredient,
 		  	totalprice:4,
-		  	error:false
+		  	error:false,
+		  	building:false
 		  }
 		   break;
 

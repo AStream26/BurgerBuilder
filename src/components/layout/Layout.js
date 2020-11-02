@@ -3,6 +3,7 @@ import Aux from '../../hoc/Auxilary';
 import classes from './layout.module.css';
 import Toolbar from '../UI/Toolbar/Toolbar';
 import Sidedraw from '../UI/Sidedrawer/Sidedraw';
+import {connect} from 'react-redux';
 
 class Layout extends Component{
 	state={
@@ -27,8 +28,8 @@ class Layout extends Component{
             
             <Aux>
 
-    <Toolbar click={this.toggle} />
-    <Sidedraw show = {this.state.sidedrawer} click = {this.togglesidedrwer} />
+    <Toolbar isauth={this.props.isauth} click={this.toggle} />
+    <Sidedraw isauth = {this.props.isauth} show = {this.state.sidedrawer} click = {this.togglesidedrwer} />
     <main className= {classes.margin}>
     {this.props.children}
     </main>
@@ -42,4 +43,10 @@ class Layout extends Component{
 	
 }
 
-export default Layout;
+const mapStateToProps = (state)=>{
+	return{
+		isauth:state.auth.token!=null
+	}
+}
+
+export default connect(mapStateToProps)(Layout);

@@ -11,10 +11,12 @@ import * as serviceWorker from './serviceWorker';
 import Reducer from './store/Reducer/burgerbuilder';
 import Order from   './store/Reducer/order';
 import thunk from 'redux-thunk';
+import Auth from './store/Reducer/Auth';
 
 const rootReducer  = combineReducers({
      burgerBuilder:Reducer,
-     order:Order
+     order:Order,
+     auth:Auth
 
 });
 

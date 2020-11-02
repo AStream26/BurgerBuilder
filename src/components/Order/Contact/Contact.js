@@ -38,7 +38,8 @@ class Contact extends Component {
 				},
 				valid:false,
 
-				value:''
+				value:'',
+				touched:false
 			},
 			mobno:{
 				inputType:'input',
@@ -113,7 +114,7 @@ class Contact extends Component {
 	}
 
 	confirm = (event)=>{
-		console.log("validating...",this.state.validation);
+		// console.log("validating...",this.state.validation);
         event.preventDefault();
         this.setState({loading:true});
         let data = {};
@@ -127,9 +128,10 @@ class Contact extends Component {
 		const post = {
 			ingredient:this.props.ings,
 			Price:this.props.price,
-			orderdata:data
+			orderdata:data,
+			userId:this.props.userid
 		}
-		this.props.onOrder(post);
+		this.props.onOrder(post,this.props.token);
 			
 		//alert("order confirmed");
 		// Axios.post('/confirm.json',post).then(response=>{
@@ -227,13 +229,15 @@ const mapStateToProps = state=>{
 	return {
       ings:state.burgerBuilder.ingredient,
       price:state.burgerBuilder.totalprice,
-      loading:state.order.loading
+      loading:state.order.loading,
+      token:state.auth.token,
+      userid:state.auth.userid
 	}
 	
 }
 const mapDispatchToProps  = dispatch=>{
 	return {
-       onOrder: (orderdata)=>dispatch(Action.Purchase(orderdata))
+       onOrder: (orderdata,token)=>dispatch(Action.Purchase(orderdata,token))
 	}
 }
 

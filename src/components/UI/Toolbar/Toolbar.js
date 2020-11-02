@@ -15,7 +15,7 @@ const toolbar= (props)=>(
 		 <div className={classes.mobileonly} onClick={props.click}><img src={Openmenu} className={classes.imga} /></div>
 	
 		<nav className={classes.dekstoponly}>
-		<Nav />
+		<Nav isauth={props.isauth} />
 		</nav>
     
 

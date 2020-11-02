@@ -12,8 +12,9 @@ export const addIngredient = (val)=>{
 
 
 export const removeIngredient = (val)=>{
+	console.log("Removed");
 	return {
-		type:Actiontype.ADD_INGREDIENT,
+		type:Actiontype.REMOVE_INGREDIENT,
 		INGNAME:val
 	}
 }

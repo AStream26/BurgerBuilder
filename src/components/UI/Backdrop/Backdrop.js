@@ -5,7 +5,7 @@ const backdrop = (props)=>{
 	        
 	        
 	        let b = props.show;
-	        console.log(b);
+	       // console.log(b);
 	       // console.log(props.clicked);
 
 	       if(b)

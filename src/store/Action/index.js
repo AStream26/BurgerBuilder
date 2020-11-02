@@ -6,7 +6,15 @@ export {addIngredient,
 export {
 	      Purchase,
 	    
-	     purchaseInit
+	     purchaseInit,
+	     Fetch
 
 } from './order.js';
+
+export {
+	Auth ,
+	logout,
+	setredirect,
+	 Authcheckstate
+} from './Auth.js';
 
