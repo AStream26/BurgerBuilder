@@ -18,8 +18,8 @@ const checkout = (props)=>{
           }}>
           </div>
           <Burger ing ={props.ing} />
-          <button className="btn btn-outline-success" onClick={props.confirm}>checkout</button>
-         <button className="btn btn-outline-danger" onClick={props.cancel}>Cancel</button>
+          <button className="btn btn-outline-success btn-lg" onClick={props.confirm}>checkout</button>
+         <button className="btn btn-outline-danger btn-lg" onClick={props.cancel}>Cancel</button>
       
         
 

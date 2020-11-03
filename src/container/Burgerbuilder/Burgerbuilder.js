@@ -1,5 +1,6 @@
  import React,{Component} from 'react';
-import Aux from '../../hoc/Auxilary'
+import Aux from '../../hoc/Auxilary';
+import 'bootstrap/dist/css/bootstrap.css';
 import Burger from '../../components/Burger/Burger';
 import Builtcontrols from '../../components/Burger/Buildcontrols/Builtcontrols';
 import Modal from '../../components/UI/Modal/Modal';
@@ -98,14 +99,25 @@ class Burgerbuilder extends Component {
          
 			
 		     <Aux>
-		     <Burger ing = {this.props.ings} />
-            
-			<Builtcontrols addIngredients = {this.props.addIngredient}
+		  
+		     <div className="row">
+		         <div className="col">
+                    <Burger ing = {this.props.ings} />
+		         </div>
+		        </div>
+		        <div className="row">
+		         <div className="col">
+		         <Builtcontrols addIngredients = {this.props.addIngredient}
 			 removeIngredients={this.props.removeIngredient} disable={disabledcheck}
 			 price = {this.props.price}
 			 purchaseable={this.checkorder()}
 			 order = {this.purchase}
 			 isauth={this.props.isauth}  />
+		         </div>
+		     </div>
+		    
+            
+			
 
 		     </Aux>	 
 			
@@ -121,15 +133,16 @@ class Burgerbuilder extends Component {
 		return (
 
 		      <Aux>
+		       {
+			 	burger
+			 }
+
 		       <Modal purchase ={this.state.purchasing} click={this.cancelpurchase}>
 			 {
 			 	load
 			 }
 			 </Modal>
-			 {
-			 	burger
-			 }
-
+			
 		      </Aux>
 			
 			);

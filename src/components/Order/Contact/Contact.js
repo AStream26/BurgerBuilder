@@ -211,7 +211,7 @@ class Contact extends Component {
 			<div className={Classes.form}>
 			
 
-           <h1 style={{alignitems:"center"}}> Enter Your Contact Data</h1>
+           <h1 > Enter Your Contact Data</h1>
 
           {form}
 

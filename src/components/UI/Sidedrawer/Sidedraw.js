@@ -18,7 +18,7 @@ const side = (props)=>{
       <Backdrop  show={props.show} clicked={props.click}/>
 
          <div className={closeoropen.join(' ')} onClick ={props.click}>
-          <Logo height="10%" />
+          <Logo height="20%" />
 
          <nav >
          <Nav isauth = {props.isauth} />

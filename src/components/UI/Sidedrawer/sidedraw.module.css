@@ -8,8 +8,8 @@
 	left:0;
 	top:0;
 	z-index: 200;
-	background-color: red;
-	transition: transform 0.3s ease-in;
+	background-color: #721B65;
+	transition: transform 0.4s ease-in;
 
 }
 

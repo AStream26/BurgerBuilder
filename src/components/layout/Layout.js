@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 
 class Layout extends Component{
 	state={
-		sidedrawer : true
+		sidedrawer : false
 	}
 
 	togglesidedrwer = ()=>{

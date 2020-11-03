@@ -1,7 +1,7 @@
 .form{
 	 box-shadow: 4px 4px 8px 0 rgba(0,0,0,0.2);
 	 border:1px solid black;
-	 margin: auto;
+	 margin-top:5em;
   width: 50%;
   
 	
@@ -10,7 +10,7 @@
 
 .layout{
       width:50%;
-	margin:auto;
+	margin-top:5em;
 	padding: 5em;
 	
 }
@@ -18,6 +18,6 @@
 @media(max-width: 1000px){
 	.layout{
       width: 100%;
-      margin: auto;
+     margin-top:5em;
 	}
 }

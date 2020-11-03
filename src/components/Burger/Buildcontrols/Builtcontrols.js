@@ -8,10 +8,13 @@ var state =[
     {label:'Cheese', type:'Cheese'},
      {label:'Meat', type:'Meat'}
 ];
+let my =[];
+my.push("btn btn-success btn-lg btn-block");
+my.push(classes.Button);
 const Burgerbuilders = (props)=>(
 	
 	<div className={classes.Builtcontrols}>
-	<p> <strong>Price</strong> : {props.price.toFixed(2)} </p>
+	<p className={classes.Price}> <strong>Price</strong> : {props.price.toFixed(2)} </p>
      {      
 
      	state.map(ctrl=>(
@@ -24,7 +27,7 @@ const Burgerbuilders = (props)=>(
      		))
      }
 
-     <button disabled = {!props.purchaseable} onClick={props.order}>{props.isauth?'OREDR':'SINGUP TO ORDER'}</button>
+     <button className={my.join(' ')} disabled = {!props.purchaseable} onClick={props.order}>{props.isauth?'OREDR':'SINGUP TO ORDER'}</button>
 
 
 	</div>

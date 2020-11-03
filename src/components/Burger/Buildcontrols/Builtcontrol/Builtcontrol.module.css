@@ -35,22 +35,25 @@
     width: 80px;
 }
 
-.BuildControl .Less {  
-    background-color: #D39952;
+ .Less {  
+   /*// background-color: #D39952;*/
+   margin-left: 1em;
+   background-color: white;
+    color: black;
+}
+
+ .More {
+    background-color: white;
+    color: black;
+}
+
+ .Less:hover, .BuildControl .Less:active {  
+    background-color: #F8615A;
     color: white;
 }
 
-.BuildControl .More {
-    background-color: #8F5E1E;
-    color: white;
-}
+ .More:hover,.BuildControl .More:active {
+    background-color: #EAE2B7;
+    color: red;
 
-.BuildControl .Less:hover, .BuildControl .Less:active {  
-    background-color: #DAA972;
-    color: white;
-}
-
-.BuildControl .More:hover,.BuildControl .More:active {
-    background-color: #99703F;
-    color: white;
 }

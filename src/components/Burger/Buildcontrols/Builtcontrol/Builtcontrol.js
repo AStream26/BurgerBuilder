@@ -1,12 +1,25 @@
 import React from 'react';
-import classes from './Builtcontrol.module.css';
+import Classes from './Builtcontrol.module.css';
+import 'bootstrap/dist/css/bootstrap.css';
+let myclass = [];
+	myclass.push("btn btn-success");
+	myclass.push(Classes.More);
+	let my = [];
+	let less = "btn btn-warning";
+	my.push(Classes.Less);
+	my.push(less);
+	
 
 const Builtcontrol = (props)=>(
-	<div className={classes.BuiltControl}>
+	
 
-     <div className={classes.Label}> {props.label}</div>
-     <button className={classes.More} onClick={props.added}>More</button>
-     <button className={classes.Less} onClick={props.removed} disabled = {props.disable}>Less</button>
+
+	<div className={Classes.BuiltControl}>
+
+      
+     <div className={Classes.Label}> {props.label}</div>
+     <button className={myclass.join(' ')} onClick={props.added}>More</button>
+     <button className={my.join(' ')} onClick={props.removed} disabled = {props.disable}>Less</button>
 	</div>
 	);
 export default Builtcontrol;

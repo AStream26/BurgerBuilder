@@ -1,11 +1,23 @@
 .Builtcontrols{
 	width :100%;
-	background-color: #CF8F2E;
+	background-color: #B80D57;
 	display: flex;
 	flex-flow: column;
 	align-items: center;
 	box-shadow: 0 2px 1px #ccc;
 	margin: auto;
-	padding: 10px 0;
+	padding-top: 5px;
+	border-radius: 2em;
+	
+	
+
+}
+.Price{
+  align-items: center;
+}
+.Button{
+	margin-top: 2em;
+	margin-bottom: none; 
+	border-radius: 2em;
 
 }

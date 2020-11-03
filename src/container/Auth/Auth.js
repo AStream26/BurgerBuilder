@@ -107,6 +107,11 @@ inputchange = (event,key)=>{
 	}
 
  	render(){
+ 		 let myclass = [];
+       myclass.push("container");
+       myclass.push(Classes.form);
+       myclass.push(Classes.layout);
+       let C = myclass.join(" ");
  		  let inputform = [];
 
         for(let key in this.state.controls){
@@ -141,6 +146,8 @@ inputchange = (event,key)=>{
 
      
     );
+   
+
        if(this.props.loading){
        	form  = <Loader />
        }
@@ -153,11 +160,7 @@ inputchange = (event,key)=>{
     home = <Redirect to={this.props.authredirect} />
        }
 
-		let myclass = [];
-       myclass.push("container");
-       myclass.push(Classes.form);
-       myclass.push(Classes.layout);
-       let C = myclass.join(" ");
+		
 
 		return (
 
@@ -165,7 +168,7 @@ inputchange = (event,key)=>{
 			
 			{ home}
 
-           <h1 style={{alignitems:"center"}}>{error}</h1>
+           <h1 style={{alignitems:"center"}}>{this.state.singup?error:"LOGIN TO CONTINUE"}</h1>
 
           {form}
            <button onClick={this.switchhandler}className="btn btn-link"> switch to  {!this.state.singup?"singup":"singin"}</button>
