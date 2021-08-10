@@ -2,7 +2,7 @@
 
 ## [Live Site](https://burgerbuilder-17a5b.web.app/)
 
-<a href="https://imgbox.com/G1TzoHS0" target="_blank"><img src="https://images2.imgbox.com/50/b6/G1TzoHS0_o.png" alt="Burger Builder"/></a>
+<img src="https://images2.imgbox.com/50/b6/G1TzoHS0_o.png" alt="Burger Builder"/>
 
 ## Introduction
 
